@@ -169,9 +169,17 @@ Game = {
     draw: function() {
       this.back2d.clearRect(0, 0, this.width, this.height);
       this.game.draw(this.back2d);
-    //  this.drawStats(this.back2d);
+  //    this.drawStats(this.back2d);
       this.front2d.clearRect(0, 0, this.width, this.height);
       this.front2d.drawImage(this.back, 0, 0);
+    },
+
+    drawStats: function(ctx) {
+//      if (this.cfg.stats) {
+        ctx.fillStyle = 'white';
+        ctx.font = '9pt sans-serif';
+        ctx.fillText("fps: "    + this.fps,           this.width - 100, this.height - 60);
+//      }
     },
 
     addEvents: function() {
